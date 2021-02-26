@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WELCOME TO JAVASCRIPT</title>
+    </head>
+<body>
+    <h1>Hidden things by Vyshnavi Tadipaneni</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="Secret">enter the secret word</label>
+    <input type ="password" id="Secret" name="Secret" min=10 max=50 step=2 value=30> <br>
+    <br>
+    <label for="Guess">Enter a guess</label>
+    <input type ="text" id="Guess" name="Guess" autofocus> <br>
+    <br>
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var correct=0;
+var wrong=0; 
+var currentImage=0;
+function processGuess(){
+    console.log("Getting form values")
+    Secret= document.getElementById("Secret").value
+    Guess= document.getElementById("Guess").value
+    confirmed = confirm("Are these the values? "+Secret+" and "+Guess)
+    
+    out = document.getElementById("result")
+    if(Secret==Guess){
+        correct = correct + 1;
+        alert("Congratulations");
+        out.innerHTML = "Congratulations"
+    } else {
+        wrong = wrong + 1;
+        alert("Sorry");
+        out.innerHTML = "Sorry"
+    }
+}
+</script>
+<div class="container">
+        <img id="plants" src="TRITELEIA1" width="200" height="200" onclick="rotateImage()">
+    </div>
+    <script>
+        var currentImage=0;
+    function rotateImage()
+    {
+       switch(currentImage)
+        {
+        case 0:
+            currentImage=currentImage+1;
+            document.getElementById("plants").src= "IMAGES/TRITELEIA1.jpeg"
+            break;
+            case 1:
+            currentImage=currentImage+1;
+            document.getElementById("plants").src= "IMAGES/INDIAN PINK2.jpg"
+            break;
+            case 2:
+            currentImage=currentImage+1;
+            document.getElementById("plants").src= "IMAGES/ARBUTUS3.jpg"
+            break;
+        }
+    }
+</script>
+
+</body>
+</html> 
