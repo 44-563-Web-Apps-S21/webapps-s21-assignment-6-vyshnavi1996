@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+</head>
+<title>WELCOME TO ARITHMETIC.HTML PAGE</title>
+</head>
+<body>
+<h1>COMPUTES BY VYSHNAVI TADIPANENI</h1>
+<h2>Getting input</h2>
+<form>
+    <label for="first_value">Enter a number</label> </label>
+    <input type ="number" id="first_value" name="first_value" value=10> <br>
+ 
+    <label for="second_value">Enter a number</label>
+    <input type ="number" id="second_value" name="second_value" value=2> <br>
+ 
+    <input type="button" onclick="permutations()" value="Compute">
+    
+</form>
+<p id="result"> permutations between two numbers will be displayed here </p>
+<form>
+<input type="radio" id="rg1_plus" name="operation"  onclick="processRadio()" value="plus"> <label for="rg1_plus">+</label>
+</br>    
+<input type="radio" id="rg1_minus" name="operation" onclick="processRadio()" value="minus"> <label for="rg1_minus">-</label>
+</br>
+<input type="radio" id="rg1_times" name="operation" onclick="processRadio()" value="times"> <label for="rg1_times">*</label>
+</br>
+<input type="radio" id="rg1_divide" name="operation" onclick="processRadio()" value="divide"> <label for="rg1_divide">/</label>
+</br>
+
+</form>
+  <p id="result1">The result displays here</p>
+<script>
+ function permutations(){
+ 
+    let first_value = document.getElementById("first_value").value
+    let second_value = document.getElementById("second_value").value
+    let product=1
+    
+   for(i=first_value;i>=(first_value-second_value+1);i--)
+   {
+       product*=i;
+   }
+   document.getElementById("result").innerHTML=first_value+" permute "+second_value+" is "+product
+ 
+}
+function processRadio() {
+        let first = document.getElementById("first_value").value;
+        let second = document.getElementById("second_value").value;
+        plus = document.getElementById("rg1_plus").checked
+        minus = document.getElementById("rg1_minus").checked
+        times = document.getElementById("rg1_times").checked
+        divide = document.getElementById("rg1_divide").checked
+       
+        if (plus) {
+            document.getElementById("arithmetic").innerHTML = (Number)(first_value) + (Number)(second_value)
+        }
+        if (minus) {
+            document.getElementById("arithmetic").innerHTML = first_value - second_value
+        }
+        if (times) {
+            document.getElementById("arithmetic").innerHTML = first_value * second_value
+        }
+        if (divide) {
+            document.getElementById("arithmetic").innerHTML = first_value / second_value
+        }
+    }
+</script>
+</body>
+</html>

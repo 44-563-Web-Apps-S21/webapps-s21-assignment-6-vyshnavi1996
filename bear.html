@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>WELCOME TO BEER.HTML PAGE</title>
+ </head>
+<body>
+<h1>VYSHNAVI TADIPANENI BUILDS A BEER</h1>
+<h2>Getting input with radio buttons and checkboxes</h2>
+
+<form>
+    <div>
+        <label for="cb1_hat"> hat </label>
+        <input type="checkbox" id="cb1_hat" name="hat" value=hat>
+        <br>
+        <label for="cb1_scarf"> Scarf </label>
+        <input type="checkbox" id="cb1_scarf" name="scarf" value=scarf> 
+        <br>
+        <label for="cb1_shirt"> Shirt</label>
+        <input type="checkbox" id="cb1_shirt" name="shirt" value="shirt"> 
+        <br>
+        <input type="button" onclick="startBear()" value="Start a bear">
+    </div>
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<form>
+    <label for="cb2_property"> Enter a property </label>
+    <input type="text" id="cb2_property" name="property" value="color"> 
+    <br>
+    <label for="cb2_value"> Enter a value </label>
+    <input type="text" id="cb2_value" name="value">
+    <br>
+    <input type="button" onclick="updatebear()" value="Update the bear">
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+<script>
+    var my_bear;
+    function startBear() {
+    my_bear = "";
+        hat = document.getElementById("cb1_hat").checked
+        scarf= document.getElementById("cb1_scarf").checked
+        shirt= document.getElementById("cb1_shirt").checked
+        my_bear = "hat : " + hat + " "+"scarf:  " + scarf +" " +"shirt:  " + shirt;
+        out = document.getElementById("result")
+        out.innerHTML = my_bear
+    }
+
+    function updatebear() {
+            my_bear = "";
+            out = document.getElementById("result2")
+            property = document.getElementById("cb2_property").value
+            value = document.getElementById("cb2_value").value
+            my_bear = property + ":" + value;
+            out.innerHTML = my_bear
+        }
+</script>
+
+</body>
+</html> 
